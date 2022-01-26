@@ -51,7 +51,35 @@ namespace ClassesTestConsoleApp1
             }
 
 
+            TModel mdl = new TModel();
+            
+            Console.WriteLine(mdl);
+            Console.WriteLine(mdl.ToPrettyString());
+
+            Console.WriteLine(new TSimResult().ToPrettyString());
+
+            Console.WriteLine(mdl.Timer.Result.ToPrettyString());
+            mdl.Timer.RunFirst();
+            Console.WriteLine(mdl.Timer.Result.ToPrettyString());
+            mdl.Timer.Run();
+            Console.WriteLine(mdl.Timer.Result.ToPrettyString());
+            mdl.Timer.Run(100);
+            Console.WriteLine(mdl.Timer.Result.ToPrettyString());
+
+            Console.WriteLine(mdl.Info.ToPrettyString());
+            mdl.RunFirst();
+            Console.WriteLine(mdl.Result.ToPrettyString());
+            mdl.Run();
+            Console.WriteLine(mdl.Result.ToPrettyString());
+            mdl.RunOnce();
+            Console.WriteLine(mdl.Result.ToPrettyString());
+            mdl.Run(1000);
+            Console.WriteLine(mdl.Result.ToPrettyString());
+
+
             Console.ReadKey();
+
+
         }
     }
 }

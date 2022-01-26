@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimClassLibrary
 {
-    public class TModelTimer
+    public class TModelTimer : IPrettyString, IRunable
     {
         public double Start { get; set; } = 0;
         public double Stop { get; set; } = 100;
@@ -18,6 +18,9 @@ namespace SimClassLibrary
         public int StepNumber { get; set; } = 0;
 
         public double CurrentTime => Start + (double)StepNumber * Step;
+
+        public TSimResult Result { get; set; } = new TSimResult()
+            { Title = "Timer", Message = "Model time at current step" };
 
         public double Next(int step = 1)
         {
@@ -50,7 +53,7 @@ namespace SimClassLibrary
             return $"{nameof(Start)}: {Start}, {nameof(Stop)}: {Stop}, {nameof(IsStopped)}: {IsStopped}, {nameof(Step)}: {Step}, {nameof(StepNumber)}: {StepNumber}, {nameof(CurrentTime)}: {CurrentTime}";
         }
 
-        public virtual string ToPrettyString()
+        public string ToPrettyString()
         {
             _table.Items.Clear();
 
@@ -62,6 +65,25 @@ namespace SimClassLibrary
             _table.Add(nameof(CurrentTime), CurrentTime.ToString());
 
             return _table.ToPrettyString();
+        }
+
+        public void Run(int N=1)
+        {
+            Next(N);
+            Result.ResultDouble = CurrentTime;
+            Result.ResultInt = StepNumber;
+            Result.Result = !IsStopped;
+        }
+
+        public void RunOnce()
+        {
+            Run(1);
+        }
+
+        public void RunFirst()
+        {
+            Reset();
+            Run(1);
         }
     }
 }

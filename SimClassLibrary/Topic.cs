@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimClassLibrary
 {
-    public class Topic
+    public class Topic : IPrettyString
     {
         public string Title { get; set; } = "Заголовок раздела";
         public string Content { get; set; } = "Содержание раздела";
@@ -42,7 +42,7 @@ namespace SimClassLibrary
 
     }
 
-    public class TopicList
+    public class TopicList : IPrettyString
     {
         public string Theme { get; set; } = "Theme";
         public List<Topic> Topics { get; set; } = new List<Topic>();
@@ -62,5 +62,14 @@ namespace SimClassLibrary
             }
             return sb.ToString(); 
         }
+
+        #region Implementation of IPrettyString
+
+        public string ToPrettyString()
+        {
+            return ToString();
+        }
+
+        #endregion
     }
 }

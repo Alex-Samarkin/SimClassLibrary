@@ -42,13 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Doc.cs" />
+    <Compile Include="IPrettyString.cs" />
+    <Compile Include="IRunable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringPair.cs" />
     <Compile Include="StringsTable.cs" />
     <Compile Include="TInfo.cs" />
+    <Compile Include="TModel.cs" />
     <Compile Include="TModelTimer.cs" />
     <Compile Include="Topic.cs" />
     <Compile Include="TPrettyStrings.cs" />
+    <Compile Include="TSimResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

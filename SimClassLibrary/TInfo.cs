@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimClassLibrary
 {
-    public class TInfo
+    public class TInfo : IPrettyString
     {
         private readonly TPrettyStrings _prettyStrings = new TPrettyStrings();
         public string Title { get; set; } = String.Empty;
@@ -23,7 +23,7 @@ namespace SimClassLibrary
                    $"{nameof(Author)}: {Author} " +
                    $"{nameof(Date)}: {Date}";
         }
-        public virtual string ToPrettyString()
+        public string ToPrettyString()
         {
             return _prettyStrings.hr4+ _prettyStrings.Nl+
                    _prettyStrings.JustifyCenter(Title) +

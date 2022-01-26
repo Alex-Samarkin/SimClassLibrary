@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimClassLibrary
 {
-    public class StringsTable : TPrettyStrings
+    public class StringsTable : TPrettyStrings, IPrettyString
     {
         public int Width1 { get; set; } = 1;
         public int Width2 { get; set; } = 1;
