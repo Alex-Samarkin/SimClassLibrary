@@ -29,14 +29,15 @@ namespace SimClassLibrary
         }
         public string ToPrettyString()
         {
-            string hr = new string('=', 120)+"\n";
-            string hr1 = "\n"+new string('-', 120)+ "\n";
+            string nl = Environment.NewLine;
+            string hr = new string('=', 120)+nl;
+            string hr1 = nl+new string('-', 120)+nl;
             return $"{hr}" +
                    $"{nameof(Title)}: {Title}" +hr1+
                    $"{nameof(Content)}: {Content}" +hr1+
                    $"{nameof(Comment)}: {Comment}" +hr1+
                    $"{nameof(Author)}: {Author}" +hr1+
-                   $"{nameof(DT)}: {DT}"+"\n"+hr;
+                   $"{nameof(DT)}: {DT}"+nl+hr;
         }
 
     }
@@ -48,7 +49,18 @@ namespace SimClassLibrary
 
         public void Add(Topic t)
         {
-            Topics.Append(t);
+            Topics.Add(t);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Theme);
+            foreach (Topic topic in Topics)
+            {
+                sb.AppendLine(topic.ToPrettyString());
+            }
+            return sb.ToString(); 
         }
     }
 }

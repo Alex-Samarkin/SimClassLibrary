@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32112.339
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimClassLibrary", "SimClassLibrary\SimClassLibrary.csproj", "{3689A2AA-14E5-4564-9213-D91DF9208BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesTestConsoleApp1", "ClassesTestConsoleApp1\ClassesTestConsoleApp1.csproj", "{D39466E9-39E2-4690-A68B-A4BBF923566D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3689A2AA-14E5-4564-9213-D91DF9208BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3689A2AA-14E5-4564-9213-D91DF9208BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3689A2AA-14E5-4564-9213-D91DF9208BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39466E9-39E2-4690-A68B-A4BBF923566D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39466E9-39E2-4690-A68B-A4BBF923566D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39466E9-39E2-4690-A68B-A4BBF923566D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39466E9-39E2-4690-A68B-A4BBF923566D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
